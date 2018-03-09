@@ -29,6 +29,9 @@ func arabicToRoman(arg int)(string) {
 
     for _, f := range figure {
         digit, i, v := int(arg / f), romanDigitA[f], romanDigitB[f]
+        fmt.Println(digit)
+        fmt.Println(i)
+        fmt.Println(v)
         switch digit {
             case 1: romanSlice = append(romanSlice, string(i))
             case 2: romanSlice = append(romanSlice, string(i) + string(i))
@@ -41,6 +44,7 @@ func arabicToRoman(arg int)(string) {
             case 9: romanSlice = append(romanSlice, string(i) + string(x))
         }
         arg -= digit * f
+        fmt.Println(arg)
         x = i
     }
     ret := ""
